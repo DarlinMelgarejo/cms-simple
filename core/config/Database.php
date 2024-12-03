@@ -3,8 +3,8 @@
 class ConexionBD {
     private $host = "localhost";
     private $nombreBD = "cms_portafolios";
-    private $usuarioBD = "root";
-    private $contraseñaBD = "";
+    private $usuarioBD = "darlin";
+    private $contraseñaBD = "R4!2S8KR97-Y]fHy";
     private $bd; // Objeto de la conexión
 
     // Método para conectar a la base de datos

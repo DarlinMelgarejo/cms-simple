@@ -52,10 +52,14 @@
                 </div>
             </section>
         </div>
+        <?php
+            include_once __DIR__ . "/../core/controllers/ControladorSkills.php";
+            $skills = ControladorSkills::data();
+        ?>
         <div class="bg-light">
-            <section class="l-container" id="habilidades">
+            <section class="l-container" id="servicios">
                 <div class="py-6">
-                    <h2 class="dark-color">Habilidades</h2>
+                    <h2 class="dark-color">Servicios</h2>
                     <div class="grid grid-cols-1 gap-4">
                         <div class="card show">
                             <h3>Frontend Developer</h3>
