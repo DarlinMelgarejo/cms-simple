@@ -150,3 +150,16 @@ Stack trace:
 #2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
 #3 {main}
 [03-Dec-2024 12:48:47 America/Lima] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 42
+[03-Dec-2024 15:00:35 America/Lima] PHP Fatal error:  Uncaught Error: Call to undefined method ControladorPortafolios::data() in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php:4
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(21): include_once()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
+#2 {main}
+  thrown in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php on line 4
+[03-Dec-2024 15:00:58 America/Lima] PHP Warning:  include_once(C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages/../core/controllers/ControladorServicios.php.php): Failed to open stream: No such file or directory in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 56
+[03-Dec-2024 15:00:58 America/Lima] PHP Warning:  include_once(): Failed opening 'C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages/../core/controllers/ControladorServicios.php.php' for inclusion (include_path='.;C:\php\pear') in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 56
+[03-Dec-2024 15:00:58 America/Lima] PHP Fatal error:  Uncaught Error: Class "ControladorServicios" not found in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php:57
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once()
+#1 {main}
+  thrown in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 57

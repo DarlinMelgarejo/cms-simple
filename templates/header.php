@@ -10,7 +10,7 @@
                     <a class="main-nav__link" href="#skills">Skills</a>
                 </li>
                 <li class="main-nav__item">
-                    <a class="main-nav__link" href="#trabajos-recientes">Trabajos recientes</a>
+                    <a class="main-nav__link" href="#trabajos-realizados">Trabajos recientes</a>
                 </li>
                 <li class="main-nav__item">
                     <a class="main-nav__link" href="#contacto">Contacto</a>

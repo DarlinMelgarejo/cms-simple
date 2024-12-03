@@ -1,7 +1,7 @@
 <?php
     include_once __DIR__ . "/../core/controllers/ControladorPortafolios.php";
 
-    $portafolio = ControladorPortafolios::data();
+    $portafolio = ControladorPortafolios::getData();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi portafolio</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href=<?php echo $portafolio["icono_portafolio"] ?> type="image/x-icon">
 </head>
 <body>
     <?php
@@ -31,7 +31,7 @@
         </div>
         <?php
             include_once __DIR__ . "/../core/controllers/ControladorSkills.php";
-            $skills = ControladorSkills::data();
+            $skills = ControladorSkills::getData();
         ?>
         <div class="bg-minimal">
             <section class="l-container" id="skills">
@@ -53,50 +53,101 @@
             </section>
         </div>
         <?php
-            include_once __DIR__ . "/../core/controllers/ControladorSkills.php";
-            $skills = ControladorSkills::data();
+            include_once __DIR__ . "/../core/controllers/ControladorServicios.php";
+            $servicios = ControladorServicios::getData();
         ?>
         <div class="bg-light">
             <section class="l-container" id="servicios">
                 <div class="py-6">
                     <h2 class="dark-color">Servicios</h2>
                     <div class="grid grid-cols-1 gap-4">
-                        <div class="card show">
-                            <h3>Frontend Developer</h3>
-                            <p>especializado en HTML, CSS, JavaScript y React para contruir sitios web rápidos y accesibles. Mi enfoque se centra en crear interfaces de usuario intuitivas y responsivas que ofrezacan una excelente experiencia al usuario en todos los dispositivos.</p>
-                        </div>
+                        <?php
+                            foreach ($servicios as $servicio) {
+                        ?>
+                            <div class="card show">
+                                <h3><?php echo $servicio["nombre"]?></h3>
+                                <p><?php echo $servicio["descripcion"]?></p>
+                            </div>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </section>
         </div>
+        <?php
+            include_once __DIR__ . "/../core/controllers/ControlladorTrabajosDesarrollados.php";
+            $trabajos_desarrollados = ControladorTrabajosDesarrollados::getData();
+        ?>
         <div class="bg-minimal">
-            <section class="l-container" id="trabajos-recientes">
+            <section class="l-container" id="trabajos-realizados">
                 <div class="py-6">
-                    <h2 class="dark-color">Trabajos recientes</h2>
+                    <h2 class="dark-color">Trabajos realizados</h2>
                     <div class="grid grid-cols-1 grid-cols-s-2 grid-cols-m-3 gap-4 m-auto">
-                        <figure class="card-figure">
-                            <img src="/assets/images/placeholder-image.jpg" alt="Proyecto" class="card-image" width="500px" height="500px">
-                            <figcaption class="card-overlay">
-                                <a href="#" target="_blank" class="card-button" title="Ver proyecto">
-                                    <img src="assets/images/icon/external_link.svg" alt="Icono de link externo">
-                                </a>
-                                <a href="#" target="_blank" class="card-button" title="GitHub">
-                                    <img src="assets/images/icon/github.svg" alt="Icono de repositorio en Github">
-                                </a>
-                            </figcaption>
-                        </figure>
+                        <?php
+                            foreach ($trabajos_desarrollados as $trabajo_desarrollado) {
+                        ?>
+                            <figure class="card-figure">
+                                <img src=<?php echo $trabajo_desarrollado["url_foto_trabajo"]?> alt="Proyecto" class="card-image" width="500px" height="500px">
+                                <figcaption class="card-overlay">
+                                    <div class="flex flex-column justify-center">
+                                        <h4 class="white-color"><?php echo $trabajo_desarrollado["nombre"]?></h4>
+                                        <div class="flex flex-row justify-center items-center gap-4">
+                                            <a href=<?php echo $trabajo_desarrollado["url_trabajo_desplegado"]?> target="_blank" class="card-button" title="Ver proyecto">
+                                                <img src="assets/images/icon/external_link.svg" alt="Icono de link externo">
+                                            </a>
+                                            <a href=<?php echo $trabajo_desarrollado["url_trabajo_github"]?> target="_blank" class="card-button" title="GitHub">
+                                                <img src="assets/images/icon/github.svg" alt="Icono de repositorio en Github">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </section>
         </div>
+        <?php
+            include_once __DIR__ . "/../core/controllers/ControladorContactos.php";
+            $contactos = ControladorContactos::getData();
+        ?>
         <div class="bg-light">
             <section class="l-container" id="contacto">
                 <div class="py-6">
                     <h2 class="dark-color">Contacto</h2>
                     <div class="flex justify-center items-center gap-6">
-                        <a href="" target="_blank"><img src="assets/images/icon/mail.svg" alt="Icono de correo" width="36px" height="36px"></a>
-                        <a href="" target="_blank"><img src="assets/images/icon/linkedin.svg" alt="Icono de correo" width="36px" height="36px"></a>
-                        <a href="" target="_blank"><img src="assets/images/icon/github.svg" alt="Icono de correo" width="36px" height="36px"></a>
+                        <?php
+                            foreach ($contactos as $contacto) {
+                                $icono_contacto = "#";
+                                $link_contacto = "#";
+                                switch ($contacto["tipo_contacto"]) {
+                                    case "email":
+                                        $icono_contacto = "assets/images/icon/mail.svg";
+                                        $link_contacto = "mailto:" . $contacto["enlace_contacto"] . "?subject=Asunto-del-correo&body=Texto-del-cuerpo";
+                                        break;
+
+                                    case "linkedin":
+                                        $icono_contacto = "assets/images/icon/linkedin.svg";
+                                        $link_contacto = $contacto["enlace_contacto"];
+                                        break;
+
+                                    case "github":
+                                        $icono_contacto = "assets/images/icon/github.svg";
+                                        $link_contacto = $contacto["enlace_contacto"];
+                                        break;
+                                    
+                                    default:
+                                        $icono_contacto = "#";
+                                        break;
+                                }
+                        ?>
+                            <a href=<?php echo $link_contacto ?> target="_blank"><img src=<?php echo $icono_contacto ?> alt=<?php echo "Icono de " . $contacto["tipo_contacto"]?> width="36px" height="36px"></a>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </section>

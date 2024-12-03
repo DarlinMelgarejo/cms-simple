@@ -113,7 +113,14 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+  flex-direction: column;
+  padding: 1rem;
+}
+@media screen and (min-width: 600px) {
+  .main-header__container {
+    padding: 0 1rem;
+    flex-direction: row;
+  }
 }
 .main-header__title {
   font-size: 0.8rem;

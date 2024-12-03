@@ -2,7 +2,7 @@
 require_once __DIR__ . "/../models/ModeloSkills.php"; // Modelo para interactuar con la tabla "skills"
 
 class ControladorSkills {
-    public static function data() {
+    public static function getData() {
         try {
             $skills = ModeloSkills::getData();
             return $skills;
