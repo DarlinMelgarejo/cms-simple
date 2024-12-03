@@ -123,3 +123,30 @@ Stack trace:
 #2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
 #3 {main}
 [02-Dec-2024 23:04:05 America/Lima] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 42
+[03-Dec-2024 12:48:47 America/Lima] Problema con la conexión: SQLSTATE[HY000] [1049] Unknown database 'cms_portafolios'
+[03-Dec-2024 12:48:47 America/Lima] Error: Call to a member function prepare() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolios.php:16
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php(7): ModeloPortafolios::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(4): ControladorPortafolios::data()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[03-Dec-2024 12:48:47 America/Lima] Problema con la conexión: SQLSTATE[HY000] [1049] Unknown database 'cms_portafolios'
+[03-Dec-2024 12:48:47 America/Lima] Error: Call to a member function prepare() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolios.php:16
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php(7): ModeloPortafolios::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php(4): ControladorPortafolios::data()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(21): include_once('C:\\Users\\DARLIN...')
+#3 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
+#4 {main}
+[03-Dec-2024 12:48:47 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php on line 10
+[03-Dec-2024 12:48:47 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php on line 16
+[03-Dec-2024 12:48:47 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 27
+[03-Dec-2024 12:48:47 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 28
+[03-Dec-2024 12:48:47 America/Lima] Problema con la conexión: SQLSTATE[HY000] [1049] Unknown database 'cms_portafolios'
+[03-Dec-2024 12:48:47 America/Lima] Error: Call to a member function query() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloSkills.php:18
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorSkills.php(7): ModeloSkills::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(34): ControladorSkills::data()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[03-Dec-2024 12:48:47 America/Lima] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 42
