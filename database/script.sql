@@ -14,56 +14,53 @@ CREATE TABLE usuarios (
 
 -- Tabla para los portafolios
 CREATE TABLE IF NOT EXISTS portafolios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     usuario_id INT NOT NULL,
-    nombre_completo VARCHAR(255) NOT NULL,                   
+    nombre_completo VARCHAR(255) NOT NULL,
     descripcion TEXT NOT NULL,
     icono_portafolio VARCHAR(255) DEFAULT 'assets/images/favicon.ico',
     url_foto VARCHAR(255) DEFAULT 'assets/images/placeholder-image.jpg',
     url_cv VARCHAR(255) DEFAULT 'assets/pdf/cv.pdf',
     creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) -- Llave foránea hacia la tabla de usuarios
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 );
 
 -- Tabla para los skills del portafolio
 CREATE TABLE IF NOT EXISTS skills (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    portafolio_id INT NOT NULL,                             -- Relación con el portafolio
-    nombre VARCHAR(255) NOT NULL,                  -- Nombre de la habilidad (Ej. "JavaScript")
-    descripcion TEXT NOT NULL,                              -- Descripción de la habilidad
-    FOREIGN KEY (portafolio_id) REFERENCES portafolios(id) -- Llave foránea hacia la tabla de portafolios
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    portafolio_id INT NOT NULL,
+    nombre VARCHAR(255) NOT NULL,
+    descripcion TEXT NOT NULL,
+    FOREIGN KEY (portafolio_id) REFERENCES portafolios(id)
 );
 
-CREATE TABLE IF NOT EXISTS habilidades
-
--- Tabla para los datos SEO del portafolio
-CREATE TABLE IF NOT EXISTS seo (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    portafolio_id INT NOT NULL,                             -- Relación con el portafolio
-    seo_titulo VARCHAR(255),                       -- Título SEO (para la etiqueta <title>)
-    seo_descripcion TEXT,                          -- Descripción SEO (para la meta descripción)
-    seo_palabras_clave TEXT,                       -- Palabras clave SEO
-    seo_slug VARCHAR(255),                         -- Slug amigable para la URL
-    seo_imagen VARCHAR(255),                       -- Imagen destacada SEO
-    FOREIGN KEY (portafolio_id) REFERENCES portafolios(id) -- Llave foránea hacia la tabla de portafolios
+CREATE TABLE IF NOT EXISTS servicios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    portafolio_id INT NOT NULL,
+    nombre VARCHAR(255) NOT NULL,
+    descripcion TEXT NOT NULL,
+    FOREIGN KEY (portafolio_id) REFERENCES portafolios(id)
 );
 
--- Tabla para los trabajos recientes
-CREATE TABLE IF NOT EXISTS trabajos_recientes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    portafolio_id INT NOT NULL,                             -- Relación con el portafolio
-    nombre VARCHAR(255) NOT NULL,                   -- Nombre del trabajo reciente
-    descripcion TEXT,                              -- Descripción del trabajo reciente
-    url_trabajo VARCHAR(255),                      -- Enlace al trabajo reciente
-    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Fecha de creación del trabajo
-    FOREIGN KEY (portafolio_id) REFERENCES portafolios(id) -- Llave foránea hacia la tabla de portafolios
+-- Tabla para los trabajos desarrollados
+CREATE TABLE IF NOT EXISTS trabajos_desarrollados (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    portafolio_id INT NOT NULL,
+    nombre VARCHAR(255) NOT NULL,
+    descripcion TEXT NOT NULL,
+    url_foto_trabajo VARCHAR(255) NOT NULL,
+    url_trabajo_github VARCHAR(255) NOT NULL,
+    url_trabajo_desplegado VARCHAR(255),
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (portafolio_id) REFERENCES portafolios(id)
 );
 
 -- Tabla para los contactos de un portafolio
 CREATE TABLE IF NOT EXISTS contactos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    portafolio_id INT NOT NULL,                             -- Relación con el portafolio
-    tipo_contacto ENUM('email', 'linkedin', 'github', 'otro') NOT NULL,  -- Tipo de contacto (email, LinkedIn, GitHub, etc.)
-    enlace_contacto VARCHAR(255) NOT NULL,         -- Enlace o dirección del contacto
-    FOREIGN KEY (portafolio_id) REFERENCES portafolios(id) -- Llave foránea hacia la tabla de portafolios
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    portafolio_id INT NOT NULL,
+    tipo_contacto ENUM('email', 'linkedin', 'github', 'gitlab') NOT NULL,
+    enlace_contacto VARCHAR(255) NOT NULL,
+    titulo_enlace VARCHAR(100) NOT NULL,
+    FOREIGN KEY (portafolio_id) REFERENCES portafolios(id)
 );
