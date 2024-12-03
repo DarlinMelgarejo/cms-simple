@@ -1,0 +1,75 @@
+$max-width: 1200px;
+$header-height: 4rem;
+
+$white-color: #FFFFFF;
+$black-color: #0D0D0D;
+$border-color: #CCCCCC;
+$text-color: #000000;
+$primary-color: #4F46E5;
+$secondary-color: #3339A6;
+$tertiary-color: #888888;
+$dark-color: #1F2937;
+$light-color: #F2F2F2;
+$minimal-color: #F9FAFB;
+$soft-color: #E5E7FF;
+$transition-time: 0.3s;
+
+$breakpoints: (
+    s: 600px,
+    m: 768px,
+    l: 960px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+:root {
+    /* Variables de apilamiento (z-index) */
+    --z-back : -10;
+    --z-normal: 0;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+
+    /* Variables de tipografia */
+    --h1-font-size: 1.25rem;
+    --h2-font-size: 1.15rem;
+    --h3-font-size: 1.05rem;
+    --h4-font-size: 1rem;
+    --h5-font-size: .9rem;
+    --h6-font-size: .8rem;
+    --body-font-size: .7rem;
+    --small-font-size: .5rem;
+
+    @include from(m) {
+        --h1-font-size: 1.45rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1.15rem;
+        --h4-font-size: 1.1rem;
+        --h5-font-size: 1rem;
+        --h6-font-size: .9rem;
+        --body-font-size: .8rem;
+        --small-font-size: .6rem;
+    }
+
+    @include from(l) {
+        --h1-font-size: 1.65rem;
+        --h2-font-size: 1.35rem;
+        --h3-font-size: 1.25rem;
+        --h4-font-size: 1.2rem;
+        --h5-font-size: 1.1rem;
+        --h6-font-size: 1rem;
+        --body-font-size: .9rem;
+        --small-font-size: .7rem;
+    }
+
+    @include from(xl) {
+        --h1-font-size: 1.85rem;
+        --h2-font-size: 1.45rem;
+        --h3-font-size: 1.35rem;
+        --h4-font-size: 1.3rem;
+        --h5-font-size: 1.2rem;
+        --h6-font-size: 1.1rem;
+        --body-font-size: 1rem;
+        --small-font-size: .8rem;
+    }
+}

@@ -1,0 +1,125 @@
+[26-Nov-2024 22:48:46 America/Lima] La contraseña del usuario Darlin Yeilin Melgarejo Miranda es incorrecta.
+[28-Nov-2024 16:11:15 America/Lima] PHP Warning:  Undefined variable $request_uri in C:\dev\xampp\htdocs\proyecto\index.php on line 28
+[28-Nov-2024 16:11:15 America/Lima] PHP Deprecated:  ltrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\dev\xampp\htdocs\proyecto\index.php on line 28
+[28-Nov-2024 16:11:15 America/Lima] PHP Warning:  Undefined variable $request_uri in C:\dev\xampp\htdocs\proyecto\index.php on line 31
+[28-Nov-2024 16:11:15 America/Lima] PHP Deprecated:  explode(): Passing null to parameter #2 ($string) of type string is deprecated in C:\dev\xampp\htdocs\proyecto\index.php on line 31
+[28-Nov-2024 16:11:15 America/Lima] PHP Warning:  Array to string conversion in C:\dev\xampp\htdocs\proyecto\index.php on line 31
+[28-Nov-2024 16:11:34 America/Lima] PHP Warning:  Array to string conversion in C:\dev\xampp\htdocs\proyecto\index.php on line 31
+[28-Nov-2024 16:11:54 America/Lima] PHP Warning:  Array to string conversion in C:\dev\xampp\htdocs\proyecto\index.php on line 32
+[28-Nov-2024 16:12:22 America/Lima] PHP Notice:  Only variables should be passed by reference in C:\dev\xampp\htdocs\proyecto\index.php on line 32
+[28-Nov-2024 16:13:19 America/Lima] PHP Notice:  Only variables should be passed by reference in C:\dev\xampp\htdocs\proyecto\index.php on line 32
+[28-Nov-2024 16:15:26 America/Lima] PHP Warning:  Array to string conversion in C:\dev\xampp\htdocs\proyecto\index.php on line 33
+[28-Nov-2024 22:36:27 America/Lima] PHP Warning:  Undefined variable $db in C:\dev\xampp\htdocs\proyecto\templates\header.php on line 6
+[28-Nov-2024 22:36:27 America/Lima] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in C:\dev\xampp\htdocs\proyecto\templates\header.php:6
+Stack trace:
+#0 C:\dev\xampp\htdocs\proyecto\pages\home.php(11): include_once()
+#1 C:\dev\xampp\htdocs\proyecto\index.php(37): include_once('C:\\dev\\xampp\\ht...')
+#2 {main}
+  thrown in C:\dev\xampp\htdocs\proyecto\templates\header.php on line 6
+[29-Nov-2024 10:58:42 America/Lima] Problema con la conexión: SQLSTATE[HY000] [1049] Unknown database 'bd_cms'
+[29-Nov-2024 10:58:42 America/Lima] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloUsuarios.php:34
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorUsuarios.php(31): ModeloUsuarios::getFirst()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php(4): ControladorUsuarios::me()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(15): include_once('C:\\Users\\DARLIN...')
+#3 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
+#4 {main}
+  thrown in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloUsuarios.php on line 34
+[29-Nov-2024 10:58:50 America/Lima] Problema con la conexión: SQLSTATE[HY000] [1049] Unknown database 'bd_cms'
+[29-Nov-2024 10:58:50 America/Lima] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloUsuarios.php:34
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorUsuarios.php(31): ModeloUsuarios::getFirst()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php(4): ControladorUsuarios::me()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(15): include_once('C:\\Users\\DARLIN...')
+#3 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
+#4 {main}
+  thrown in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloUsuarios.php on line 34
+[29-Nov-2024 10:59:43 America/Lima] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloUsuarios.php:35
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloUsuarios.php(35): PDOStatement->execute()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorUsuarios.php(31): ModeloUsuarios::getFirst()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php(4): ControladorUsuarios::me()
+#3 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(15): include_once('C:\\Users\\DARLIN...')
+#4 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
+#5 {main}
+  thrown in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloUsuarios.php on line 35
+[29-Nov-2024 11:01:23 America/Lima] PHP Warning:  Undefined array key "url_fotos" in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php on line 16
+[29-Nov-2024 11:01:23 America/Lima] PHP Warning:  Undefined array key "url_fotos" in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php on line 16
+[29-Nov-2024 11:11:56 America/Lima] PHP Warning:  Undefined array key "url_foto" in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php on line 16
+[29-Nov-2024 11:11:56 America/Lima] PHP Warning:  Undefined array key "url_cv" in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 26
+[29-Nov-2024 11:11:56 America/Lima] PHP Warning:  Undefined array key "url_foto" in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php on line 16
+[29-Nov-2024 11:11:56 America/Lima] PHP Warning:  Undefined array key "url_cv" in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 26
+[29-Nov-2024 11:19:33 America/Lima] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cms_portafolios.porfafolios' doesn't exist in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolio.php:17
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolio.php(17): PDOStatement->execute()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php(7): ModeloPortafolios::getData()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(4): ControladorPortafolios::data()
+#3 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
+#4 {main}
+  thrown in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolio.php on line 17
+[29-Nov-2024 11:20:34 America/Lima] PHP Warning:  Undefined array key "url_foto" in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php on line 16
+[29-Nov-2024 11:20:34 America/Lima] PHP Warning:  Undefined array key "url_foto" in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php on line 16
+[29-Nov-2024 11:21:52 America/Lima] PHP Warning:  Undefined array key "descripcions" in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 27
+[29-Nov-2024 12:46:27 America/Lima] PHP Warning:  Trying to access array offset on int in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 45
+[29-Nov-2024 12:46:27 America/Lima] PHP Warning:  Trying to access array offset on int in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 46
+[29-Nov-2024 12:46:27 America/Lima] PHP Warning:  Trying to access array offset on int in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 45
+[29-Nov-2024 12:46:27 America/Lima] PHP Warning:  Trying to access array offset on int in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 46
+[29-Nov-2024 12:46:27 America/Lima] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php:45
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once()
+#1 {main}
+  thrown in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 45
+[02-Dec-2024 23:03:34 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[02-Dec-2024 23:03:34 America/Lima] Error: Call to a member function prepare() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolios.php:16
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php(7): ModeloPortafolios::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(4): ControladorPortafolios::data()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[02-Dec-2024 23:03:38 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[02-Dec-2024 23:03:38 America/Lima] Error: Call to a member function prepare() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolios.php:16
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php(7): ModeloPortafolios::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php(4): ControladorPortafolios::data()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(21): include_once('C:\\Users\\DARLIN...')
+#3 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
+#4 {main}
+[02-Dec-2024 23:03:38 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php on line 10
+[02-Dec-2024 23:03:38 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php on line 16
+[02-Dec-2024 23:03:38 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 27
+[02-Dec-2024 23:03:38 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 28
+[02-Dec-2024 23:03:42 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[02-Dec-2024 23:03:42 America/Lima] Error: Call to a member function query() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloSkills.php:18
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorSkills.php(7): ModeloSkills::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(34): ControladorSkills::data()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[02-Dec-2024 23:03:42 America/Lima] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 42
+[02-Dec-2024 23:03:58 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2006] MySQL server has gone away
+[02-Dec-2024 23:03:58 America/Lima] Error: Call to a member function prepare() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolios.php:16
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php(7): ModeloPortafolios::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(4): ControladorPortafolios::data()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[02-Dec-2024 23:04:02 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2006] MySQL server has gone away
+[02-Dec-2024 23:04:02 America/Lima] Error: Call to a member function prepare() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolios.php:16
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php(7): ModeloPortafolios::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php(4): ControladorPortafolios::data()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(21): include_once('C:\\Users\\DARLIN...')
+#3 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
+#4 {main}
+[02-Dec-2024 23:04:02 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php on line 10
+[02-Dec-2024 23:04:02 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php on line 16
+[02-Dec-2024 23:04:02 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 27
+[02-Dec-2024 23:04:02 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 28
+[02-Dec-2024 23:04:05 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2006] MySQL server has gone away
+[02-Dec-2024 23:04:05 America/Lima] Error: Call to a member function query() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloSkills.php:18
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorSkills.php(7): ModeloSkills::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(34): ControladorSkills::data()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[02-Dec-2024 23:04:05 America/Lima] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 42

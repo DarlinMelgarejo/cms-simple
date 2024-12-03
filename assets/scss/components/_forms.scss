@@ -1,0 +1,66 @@
+input[type="file"] {
+    outline: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    cursor: pointer;
+    display: none;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    display: none;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    border: 2px solid $light-color;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+    &:focus {
+        color: #212529;
+        background-color: #ffffff;
+        outline: 0;
+        box-shadow: 0 0 0 .15rem $light-color
+    }
+
+    &-dark {
+        border: 2px solid $border-color;
+
+        &:focus {
+            color: #212529;
+            background-color: #ffffff;
+            outline: 0;
+            box-shadow: 0 0 0 .15rem $border-color
+        }
+    }
+}
+
+.form-label {
+    font-size: .9rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+
+    &-primary {
+        color: $primary-color;
+    }
+
+    &-black {
+        color: $black-color;
+    }
+}
+
+.hidden {
+    display: none;
+}

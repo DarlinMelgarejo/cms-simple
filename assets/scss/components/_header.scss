@@ -1,0 +1,80 @@
+.main-header {
+    height: $header-height;
+    background-color: $white-color;
+
+    &__container {
+        height: 100%;
+        color: $text-color;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+    }
+
+    &__title {
+        font-size: .80rem;
+        font-weight: bold;
+        text-align: center;
+        margin: 0;
+
+        @include from(m) {
+            font-size: 1.45rem;
+        }
+
+        @include from(l) {
+            font-size: 1.65rem;
+        }
+
+        @include from(xl) {
+            font-size: 1.85rem;
+        }
+    }
+    
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+        
+        img {
+            display:  none;
+
+            @include from(s) {
+                display: block;
+            }
+        }
+    }
+
+    &__menu {
+        display: none;
+        gap: 2rem;
+
+        &.hidden {
+            display: flex;
+            background-color: $secondary-color;
+            justify-content: space-around;
+            gap: 0;
+            margin: 0;
+            padding: 1rem 0;
+        }
+
+        @include from(m) {
+            display: flex;
+
+            &.hidden {
+                display: none;
+                background-color: $secondary-color;
+                justify-content: space-around;
+                gap: 0;
+                margin: 0;
+                padding: 1rem 0;
+            }
+        }
+
+    }
+
+    &__options {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+}

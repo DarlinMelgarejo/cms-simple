@@ -1,0 +1,82 @@
+.btn {
+    display: inline-block;
+    padding: .75rem .75rem;
+    font-size: .6rem;
+    font-weight: 700;
+    line-height: 1.25;
+    background-color: $black-color;
+    color: $white-color;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: none;
+    border-radius: 0.375rem;
+    transition: color .15s ease-in-out, background-color .3s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+    @include from(s) {
+        font-size: .7rem;
+    }
+
+    @include from(l) {
+        font-size: .7rem;
+    }
+
+    @include from(xl) {
+        font-size: .8rem;
+    }
+
+    &:hover {
+        color: $white-color;
+        background-color: #33373b
+    }
+    
+    &.btn-primary {
+        color: $white-color;
+        background-color: $primary-color;
+        border: none;
+
+        &:hover {
+            color: $white-color;
+            background-color: $secondary-color;
+        }
+    }
+    
+    &.btn-secondary {
+        color: $white-color;
+        background-color: $secondary-color;
+        border: none;
+
+        &:hover {
+            color: $white-color;
+            background-color: $primary-color;
+        }
+    }
+
+    &.btn-white {
+        color: $black-color;
+        background-color: $white-color;
+        border: 1px solid $border-color;
+        border-radius: 7.5px;
+
+        &:hover {
+            color: $black-color;
+            background-color: $border-color;
+        }
+    }
+    
+    &.btn-dark {
+        color: $white-color;
+        background-color: $dark-color;
+        border: 1px solid $border-color;
+        border-radius: 7.5px;
+
+        &:hover {
+            color: $dark-color;
+            background-color: $white-color;
+        }
+    }
+}

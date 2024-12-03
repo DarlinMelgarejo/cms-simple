@@ -1,0 +1,42 @@
+.main-nav {
+    background-color: $white-color;
+    height: calc(100vh - $header-height);
+    width: 200px;
+
+    @include from(l) {
+        width: 300px;
+    }
+
+    &__portafolio {
+        background-color: $white-color;
+    }
+
+    &__menu {
+        width: 100%;
+
+        &-portafolio {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+
+    &__item {
+        list-style: none;
+        padding: .75rem 1rem;
+        cursor: pointer;
+
+        &:hover {
+            transition: background-color $transition-time ease-in-out;
+            background-color: $border-color;
+        }
+    }
+    
+    &__link  {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        color: $text-color;
+    }
+}

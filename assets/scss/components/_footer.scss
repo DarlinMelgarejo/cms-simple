@@ -1,0 +1,55 @@
+.main-footer {
+    background-color: $secondary-color;
+    padding: 1.25em;
+
+    &__content {
+        padding: 1.5em;
+
+        @include from(m) {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: .75rem;
+        }
+
+        @include from(l) {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+    }
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+        gap: .5em;
+        margin-bottom: 1rem;
+
+        @include from(m) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__social {
+        display: flex;
+        justify-content: flex-start;
+        gap: 2em;
+        padding: .5em;
+    }
+
+    &__link {
+        color: $text-color;
+    }
+
+    &__contact {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+    }
+
+    &__copyright {
+        display: flex;
+        justify-content: center;
+        padding: 1.5em;
+        border-top: 1px solid $border-color;
+    }
+}

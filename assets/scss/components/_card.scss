@@ -1,0 +1,76 @@
+.card {
+    width: 100%;
+    background-color: $white-color;
+    color: $black-color;
+    display: flex;
+    flex-direction: column;
+    border-radius: 7.5px;
+    padding: 1.5rem;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.250);
+    display: none;
+
+    &.show {
+        transition: display $transition-time ease;
+        display: block;
+    }
+
+    &-figure {
+        position: relative;
+        max-width: 600px;
+        min-height: 300px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    &-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    &-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &-button {
+        width: 40px;
+        height: 40px;
+        background-color: $white-color;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+            background-color: $soft-color;
+            transform: scale(1.1);
+        }
+    }
+
+}
