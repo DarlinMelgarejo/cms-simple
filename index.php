@@ -2,39 +2,42 @@
     require_once __DIR__ . "/core/config/Config.php";
     require_once __DIR__ . "/core/routes/RouterUsuarios.php";
 
-    $ruta = $_GET["route"] ?? null;
-    $accion = $_GET["action"] ?? null;
+    $ruta = $_SERVER["REQUEST_URI"];
+    $metodo = $_SERVER["REQUEST_METHOD"];
 
-    if ($ruta && $accion) {
-        switch ($ruta) {
+    $ruta = parse_url($ruta, PHP_URL_PATH);
+    $partesRuta = explode('/', $ruta);
+
+    if (count($partesRuta) == 3) {
+        switch ($partesRuta[1]) {
             case "usuarios":
-                RouterUsuarios::redireccionar($accion);
+                RouterUsuarios::redireccionar($partesRuta[2]);
                 break;
             
-            case "componentes":
-                RouterUsuarios::redireccionar($accion);
+            case "usuarios":
+                RouterUsuarios::redireccionar($partesRuta[2]);
                 break;
-                
+            
             default:
-                // include_once "./pages/login.php";
-                //include_once "./pages/dashboard.php";
+                echo "ESTA PAGINA NO EXISTE";
+                echo "<br>" . count($partesRuta);
                 break;
         }
-    } else {
-        // // Obtener la URI solicitada
-        // $request_uri = $_SERVER['REQUEST_URI'];
+    } else if (count($partesRuta) == 2) {
+        switch ($partesRuta[1]) {
+            case "":
+                include_once __DIR__ . "/pages/home.php";
+                break;
 
-        // // Eliminar la barra inicial si existe
-        // $request_uri = ltrim($request_uri, '/');
-        // echo "<br>" . $request_uri;
-        
-        // // Dividir la URI por el carácter '/'
-        // $partes = explode('/', $request_uri);
-        
-        // // Obtener la última parte
-        // echo "<br>" . $partes[0];
-        // echo "<br>" . $partes[1];
-        include_once __DIR__ . "/pages/home.php";
-        //include_once __DIR__ . "/pages/login.php";
+            case "login":
+                include_once __DIR__ . "/pages/login.php";
+                break;
+            
+            case "dashboard":
+                include_once __DIR__ . "/pages/dashboard.php";
+                break;
+        }
+        //echo password_hash("12345678", PASSWORD_BCRYPT);
     }
+
 ?>

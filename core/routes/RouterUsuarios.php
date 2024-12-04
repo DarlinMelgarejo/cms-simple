@@ -12,10 +12,6 @@ class RouterUsuarios {
                 ControladorUsuarios::logout();
                 break;
 
-            case "dashboard":
-                ControladorUsuarios::dashboard();
-                break;
-
             
             default:
                 # code...

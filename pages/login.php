@@ -10,7 +10,7 @@
     <div class="h-100v flex flex-column justify-center items-center">
         <div class="l-container bg-white b-radius-4">
             <h1 class="mb-8">Inicia Sesión en CMS Simple</h1>
-            <form class="w-full" action="index.php?route=usuarios&action=login" method="POST">
+            <form class="w-full" action="/usuarios/login" method="POST">
                 <div class="flex flex-column mb-4">
                     <label class="form-label form-label-black" for="email">Correo electrónico</label>
                     <input class="form-control form-control-black" type="email" id="email" name="email"/>

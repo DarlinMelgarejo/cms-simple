@@ -163,3 +163,40 @@ Stack trace:
 #0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once()
 #1 {main}
   thrown in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 57
+[03-Dec-2024 21:03:08 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[03-Dec-2024 21:03:08 America/Lima] Error: Call to a member function prepare() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolios.php:16
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php(7): ModeloPortafolios::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(4): ControladorPortafolios::getData()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[03-Dec-2024 21:03:08 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 13
+[03-Dec-2024 21:03:12 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[03-Dec-2024 21:03:12 America/Lima] Error: Call to a member function prepare() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolios.php:16
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php(7): ModeloPortafolios::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php(4): ControladorPortafolios::getData()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(21): include_once('C:\\Users\\DARLIN...')
+#3 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
+#4 {main}
+[03-Dec-2024 21:03:12 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php on line 10
+[03-Dec-2024 21:03:12 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\templates\banner.php on line 16
+[03-Dec-2024 21:03:12 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 27
+[03-Dec-2024 21:03:12 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 28
+[03-Dec-2024 21:03:16 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[03-Dec-2024 21:03:16 America/Lima] Error: Call to a member function query() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloSkills.php:18
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorSkills.php(7): ModeloSkills::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(34): ControladorSkills::getData()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(37): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[03-Dec-2024 21:03:16 America/Lima] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 42
+[03-Dec-2024 22:15:22 America/Lima] PHP Warning:  Array to string conversion in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php on line 33
+[03-Dec-2024 22:17:03 America/Lima] PHP Warning:  Undefined array key 3 in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php on line 35
+[03-Dec-2024 22:18:02 America/Lima] PHP Warning:  Undefined array key 3 in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php on line 36
+[03-Dec-2024 22:24:21 America/Lima] PHP Warning:  Undefined array key 2 in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php on line 28
+[03-Dec-2024 22:34:16 America/Lima] La contraseña del usuario Darlin Yeilin Melgarejo Miranda es incorrecta.
+[03-Dec-2024 22:35:14 America/Lima] La contraseña del usuario Darlin Yeilin Melgarejo Miranda es incorrecta.
+[03-Dec-2024 22:37:28 America/Lima] La contraseña del usuario Darlin Yeilin Melgarejo Miranda es incorrecta.
+[03-Dec-2024 22:37:33 America/Lima] La contraseña del usuario Darlin Yeilin Melgarejo Miranda es incorrecta.
+[03-Dec-2024 22:40:35 America/Lima] La contraseña del usuario Darlin Yeilin Melgarejo Miranda es incorrecta.

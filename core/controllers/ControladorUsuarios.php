@@ -20,10 +20,10 @@ class ControladorUsuarios {
             Sesion::set("id", $usuario["id"]);
             Sesion::set("usuario", $usuario["nombres"] . " " . $usuario["apellidos"]);
             Sesion::set("email", $usuario["email"]);
-            header("Location: index.php?route=usuarios&action=dashboard");
+            header("Location: /dashboard");
         } else {
             error_log("La contraseña del usuario " . $usuario["nombres"] . " " . $usuario["apellidos"] . " es incorrecta.");
-            header("Location: index.php?route=usuarios&action=login");
+            header("Location: /login");
         }
     }
 
@@ -32,18 +32,9 @@ class ControladorUsuarios {
         return $usuario;
     }
 
-    public static function dashboard() { 
-        if (Sesion::isAuthenticated()) {
-            include_once __DIR__ . "/../auth/Sesion.php";
-            include_once __DIR__ . "/../../pages/dashboard.php";
-        } else {
-            include_once __DIR__ . "/../../pages/login.php";
-        }
-    }
-
     public static function logout() {
         Sesion::destroy();
-        header("Location: index.php");
+        header("Location: /login");
         exit();
     }
 }

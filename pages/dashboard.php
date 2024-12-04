@@ -18,7 +18,7 @@
                         <img class="icon" src="assets/images/svg/settings.svg" alt="Icono de configuración">
                     </div>
                 </button>
-                <a class="btn btn-white p-1" href="index.php?route=usuarios&action=logout">
+                <a class="btn btn-white p-1" href="/usuarios/logout">
                     <div class="flex items-center h-full">
                         <img class="icon" src="assets/images/svg/logout.svg" alt="Icono de cerrar sesión">
                     </div>
@@ -68,7 +68,7 @@
                     <div class="flex flex-column mb-4">
                         <label class="form-label" for="logo">Logo</label>
                         <div class="flex flex-row items-center gap-4">
-                            <img class="icon__border" src="../assets/images/svg/upload_file.svg" alt="Imagen de Logo">
+                            <button type="button" class="btn btn-white" onclick="seleccionarLogo()"><img class="icon__border" src="../assets/images/svg/upload_file.svg" alt="Imagen de Logo"></button>
                             <input type="file" name="logo" id="logo" onchange="handleFileChange()">
                             <button type="button" class="btn btn-white" onclick="seleccionarLogo()">Subir logo</button>
                         </div>
