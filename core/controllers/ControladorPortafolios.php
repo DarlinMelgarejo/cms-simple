@@ -95,9 +95,6 @@
                     $cvNombre = $cvDestino;
                 }
                 
-        
-                // Aquí puedes insertar los datos en la base de datos
-                // Por ejemplo, si tienes una función `insertarDatosPortafolio` en el modelo
                 ModeloPortafolios::setData($nombre_completo, $descripcion, $fotoNombre, $cvNombre, Sesion::get("id"));
                 
             } catch (PDOException $e) {

@@ -24,7 +24,7 @@ class ModeloSkills {
     }
 
     /**
-     * Actualiza los datos esenciales del protafolio
+     * Registra los datos de la skill
      */
     public static function setData($portafolio_id, $nombre, $descripcion) {
         $conexion = new ConexionBD();

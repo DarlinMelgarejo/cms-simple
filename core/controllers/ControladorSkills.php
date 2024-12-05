@@ -19,8 +19,6 @@ class ControladorSkills {
             $nombre = filter_input(INPUT_POST, "nombre", FILTER_SANITIZE_SPECIAL_CHARS);
             $descripcion = filter_input(INPUT_POST, "descripcion", FILTER_SANITIZE_SPECIAL_CHARS);                
     
-            // Aquí puedes insertar los datos en la base de datos
-            // Por ejemplo, si tienes una función `insertarDatosPortafolio` en el modelo
             ModeloSkills::setData($portafolio_id, $nombre, $descripcion);
             
         } catch (PDOException $e) {

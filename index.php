@@ -4,6 +4,7 @@
     require_once __DIR__ . "/core/routes/RouterUsuarios.php";
     require_once __DIR__ . "/core/routes/RouterPortafolios.php";
     require_once __DIR__ . "/core/routes/RouterSkills.php";
+    require_once __DIR__ . "/core/routes/RouterServicios.php";
 
     $ruta = $_SERVER["REQUEST_URI"];
 
@@ -22,6 +23,10 @@
             
             case "skills":
                 RouterSkills::redireccionar($partesRuta[2]);
+                break;
+
+            case "servicios":
+                RouterServicios::redireccionar($partesRuta[2]);
                 break;
             
             default:

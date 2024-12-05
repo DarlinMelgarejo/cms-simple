@@ -65,7 +65,7 @@
         </div>
         <?php
             include_once __DIR__ . "/../core/controllers/ControladorServicios.php";
-            $servicios = ControladorServicios::getData();
+            $servicios = ControladorServicios::getData($portafolio["id"]);
         ?>
         <div class="bg-light">
             <section class="l-container" id="servicios">
