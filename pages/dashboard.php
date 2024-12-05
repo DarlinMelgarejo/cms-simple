@@ -12,12 +12,11 @@
             <h1 class="main-header__title">CMS Simple</h1>
             <span><?php echo "Bienvenido " . Sesion::get("usuario")?></span>
             <div class="main-header__options">
-                <button class="btn btn-primary">+ Agregar Componente</button>
-                <button class="btn btn-white p-1">
+                <a class="btn btn-white p-1" href="/" target="_blank">
                     <div class="flex items-center h-full">
-                        <img class="icon" src="assets/images/svg/settings.svg" alt="Icono de configuración">
+                        <img class="icon" src="assets/images/svg/view.svg" alt="Icono de visualizar">
                     </div>
-                </button>
+                </a>
                 <a class="btn btn-white p-1" href="/usuarios/logout">
                     <div class="flex items-center h-full">
                         <img class="icon" src="assets/images/svg/logout.svg" alt="Icono de cerrar sesión">
@@ -30,84 +29,110 @@
         <nav class="main-nav">
             <ul class="main-nav__menu">
                 <li class="main-nav__item">
-                    <a class="main-nav__link" onclick="mostrarSeccion('seccion-header')">
+                    <a class="main-nav__link" onclick="mostrarSeccion('seccion-portafolio')">
                         <img class="icon" src="assets/images/svg/component.svg" alt="Icono de componente">
-                        <span>Cabecera</span>
+                        <span>Portafolio</span>
                     </a>
                 </li>
                 <li class="main-nav__item">
-                    <a class="main-nav__link"onclick="mostrarSeccion('seccion-nav')">
+                    <a class="main-nav__link"onclick="mostrarSeccion('seccion-skills')">
                         <img class="icon" src="assets/images/svg/component.svg" alt="Icono de componente">
-                        <span>Barra de Navegación</span>
+                        <span>Skills</span>
                     </a>
                 </li>
                 <li class="main-nav__item">
-                    <a class="main-nav__link" onclick="mostrarSeccion('seccion-banner')">
+                    <a class="main-nav__link" onclick="mostrarSeccion('seccion-servicios')">
                         <img class="icon" src="assets/images/svg/component.svg" alt="Icono de componente">
-                        <span>Banner</span>
+                        <span>Servicios</span>
                     </a>
                 </li>
                 <li class="main-nav__item">
-                    <a class="main-nav__link" onclick="mostrarSeccion('seccion-main')">
+                    <a class="main-nav__link" onclick="mostrarSeccion('seccion-trabajos-realizados')">
                         <img class="icon" src="assets/images/svg/component.svg" alt="Icono de componente">
-                        <span>Contenido Principal</span>
+                        <span>Trabajos Realizados</span>
                     </a>
                 </li>
                 <li class="main-nav__item">
-                    <a class="main-nav__link" onclick="mostrarSeccion('seccion-footer')">
+                    <a class="main-nav__link" onclick="mostrarSeccion('seccion-contactos')">
                         <img class="icon" src="assets/images/svg/component.svg" alt="Icono de componente">
-                        <span>Pie de Página</span>
+                        <span>Contactos</span>
                     </a>
                 </li>
             </ul>
         </nav>
         <main class="l-container w-full">
-            <section class="card show" id="seccion-header">
-                <h2>Editar Encabezado</h2>
-                <form class="">
-                    <div class="flex flex-column mb-4">
-                        <label class="form-label" for="logo">Logo</label>
+            <?php
+                include_once __DIR__ . "/../core/controllers/ControladorPortafolios.php";
+
+                $portafolio = ControladorPortafolios::getData();
+            ?>
+            <section class="card show" id="seccion-portafolio">
+                <h2>Editar Información del Portafolio</h2>
+                <form action="/portafolio/editar" method="POST" enctype="multipart/form-data">
+                    <div class="flex flex-column gap-4 mb-4">
+                        <label class="form-label" for="foto">Foto</label>
                         <div class="flex flex-row items-center gap-4">
-                            <button type="button" class="btn btn-white" onclick="seleccionarLogo()"><img class="icon__border" src="../assets/images/svg/upload_file.svg" alt="Imagen de Logo"></button>
-                            <input type="file" name="logo" id="logo" onchange="handleFileChange()">
-                            <button type="button" class="btn btn-white" onclick="seleccionarLogo()">Subir logo</button>
+                            <button type="button" class="btn btn-white" onclick="seleccionarFoto()"><img class="icon__border" src="../assets/images/svg/upload_file.svg" alt="Icono de foto"></button>
+                            <input type="file" name="foto" id="foto"  accept=".png, .jpg, .jpeg">
+                            <button type="button" class="btn btn-white" onclick="seleccionarFoto()">Subir foto</button>
                         </div>
+                        <input class="form-control" type="text" name="url_foto" id="url_foto" value="<?php echo $portafolio["url_foto"]?>">
                     </div>
                     <div class="flex flex-column mb-4">
-                        <label class="form-label" for="titulo">Título</label>
-                        <input class="form-control" type="text" name="titulo" id="titulo" placeholder="Ingrese el título del header">
+                        <label class="form-label" for="titulo">Nombre Completo</label>
+                        <input class="form-control" type="text" name="nombre_completo" id="nombre_completo" placeholder="Ingrese su nombre completo" value="<?php echo $portafolio["nombre_completo"]?>">
                     </div>
-                    <div class="flex items-center gap-2 mb-4">
+                    <div class="flex flex-column mb-4">
+                        <label class="form-label" for="titulo">Descripción</label>
+                        <textarea class="form-control" name="descripcion" id="descripcion" placeholder="Ingrese la descripción que saldrá en el portafolio" rows="5"><?php echo $portafolio["descripcion"]?></textarea>
+                    </div>
+                    <!-- <div class="flex items-center gap-2 mb-4">
                         <input class="switch" type="checkbox" name="mostrar-descripcion" id="switch" onchange="mostrarDescripcion()">
                         <label class="form-label m-0" for="mostrar-descripcion">Mostrar descripción</label>
                     </div>
                     <div class="flex flex-column mb-4 hidden">
                         <label class="form-label" for="titulo">Descripción</label>
                         <textarea class="form-control" name="descripcion" id="descripcion" placeholder="Ingrese la descripción del header" rows="3"></textarea>
+                    </div> -->
+                    <div class="flex flex-column gap-4 mb-4">
+                        <label class="form-label" for="cv">CV</label>
+                        <div class="flex flex-row items-center gap-4">
+                            <input type="file" name="cv" id="cv" accept=".pdf">
+                            <div class="flex gap-4">
+                                <button type="button" class="btn btn-white" onclick="seleccionarCV()">Subir curriculum en PDF</button>
+                                <a class="btn btn-white" href="<?php echo $portafolio["url_cv"]?>" download>Descargar CV</a>
+                            </div>
+                        </div>
+                        <input class="form-control" type="text" name="url_cv" id="url_cv" value="<?php echo $portafolio["url_cv"]?>">
                     </div>
                     <div class="flex justify-start">
                         <button class="btn" type="submit">Guardar Cambios</button>
                     </div>
                 </form>
             </section>
-            <section class="card" id="seccion-nav">
+            <section class="card" id="seccion-skills">
                 <h2>Editar Barra de Navegación</h2>
             </section>
-            <section class="card" id="seccion-banner">
+            <section class="card" id="seccion-servicios">
                 <h2>Editar Banner</h2>
             </section>
-            <section class="card" id="seccion-main">
+            <section class="card" id="seccion-trabajos-realizados">
                 <h2>Editar Contenido Principal</h2>
             </section>
-            <section class="card" id="seccion-footer">
+            <section class="card" id="seccion-contactos">
                 <h2>Editar Pie de Página</h2>
             </section>
         </main>
     </div>
     <script>
-        const inputLogo = document.getElementById("logo")
-        const seleccionarLogo = () => {
-            inputLogo.click()
+        const inputFoto = document.getElementById("foto")
+        const seleccionarFoto = () => {
+            inputFoto.click()
+        }
+        
+        const inputCV = document.getElementById("cv")
+        const seleccionarCV = () => {
+            inputCV.click()
         }
 
 

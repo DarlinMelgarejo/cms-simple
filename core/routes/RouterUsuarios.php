@@ -11,11 +11,6 @@ class RouterUsuarios {
             case "logout":
                 ControladorUsuarios::logout();
                 break;
-
-            
-            default:
-                # code...
-                break;
         }
     }
 }

@@ -200,3 +200,105 @@ Stack trace:
 [03-Dec-2024 22:37:28 America/Lima] La contraseña del usuario Darlin Yeilin Melgarejo Miranda es incorrecta.
 [03-Dec-2024 22:37:33 America/Lima] La contraseña del usuario Darlin Yeilin Melgarejo Miranda es incorrecta.
 [03-Dec-2024 22:40:35 America/Lima] La contraseña del usuario Darlin Yeilin Melgarejo Miranda es incorrecta.
+[04-Dec-2024 10:48:01 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[04-Dec-2024 10:48:01 America/Lima] Error: Call to a member function prepare() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolios.php:16
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php(7): ModeloPortafolios::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(4): ControladorPortafolios::getData()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(29): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[04-Dec-2024 10:48:01 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 13
+[04-Dec-2024 10:48:01 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 24
+[04-Dec-2024 10:48:01 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 30
+[04-Dec-2024 10:48:01 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 30
+[04-Dec-2024 10:48:01 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 30
+[04-Dec-2024 10:48:01 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 38
+[04-Dec-2024 10:48:01 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 39
+[04-Dec-2024 10:48:05 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[04-Dec-2024 10:48:05 America/Lima] Error: Call to a member function query() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloSkills.php:18
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorSkills.php(7): ModeloSkills::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(45): ControladorSkills::getData()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(29): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[04-Dec-2024 10:48:05 America/Lima] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 53
+[04-Dec-2024 10:48:09 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[04-Dec-2024 10:48:09 America/Lima] Error: Call to a member function query() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloServicios.php:18
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorServicios.php(7): ModeloServicios::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(68): ControladorServicios::getData()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(29): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[04-Dec-2024 10:48:09 America/Lima] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 76
+[04-Dec-2024 10:48:13 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[04-Dec-2024 10:48:13 America/Lima] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php:70) in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\config\Database.php on line 29
+[04-Dec-2024 10:48:13 America/Lima] Error: Call to a member function query() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloTrabajosDesarrollados.php:18
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControlladorTrabajosDesarrollados.php(7): ModeloTrabajosDesarrollados::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(91): ControladorTrabajosDesarrollados::getData()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(29): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[04-Dec-2024 10:48:13 America/Lima] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 99
+[04-Dec-2024 10:48:17 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[04-Dec-2024 10:48:17 America/Lima] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php:70) in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\config\Database.php on line 29
+[04-Dec-2024 10:48:17 America/Lima] Error: Call to a member function query() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloContactos.php:18
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorContactos.php(7): ModeloContactos::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(126): ControladorContactos::getData()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(29): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[04-Dec-2024 10:48:17 America/Lima] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 134
+[04-Dec-2024 10:50:22 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[04-Dec-2024 10:50:22 America/Lima] Error: Call to a member function prepare() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolios.php:16
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php(7): ModeloPortafolios::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(4): ControladorPortafolios::getData()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(29): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[04-Dec-2024 10:50:22 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 13
+[04-Dec-2024 10:50:22 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 24
+[04-Dec-2024 10:50:22 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 30
+[04-Dec-2024 10:50:22 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 30
+[04-Dec-2024 10:50:22 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 30
+[04-Dec-2024 10:50:22 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 38
+[04-Dec-2024 10:50:22 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 39
+[04-Dec-2024 10:50:26 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[04-Dec-2024 10:50:26 America/Lima] Error: Call to a member function query() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloSkills.php:18
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorSkills.php(7): ModeloSkills::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(45): ControladorSkills::getData()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(29): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[04-Dec-2024 10:50:26 America/Lima] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 53
+[04-Dec-2024 10:50:30 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[04-Dec-2024 10:50:30 America/Lima] Error: Call to a member function query() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloServicios.php:18
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorServicios.php(7): ModeloServicios::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(68): ControladorServicios::getData()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(29): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[04-Dec-2024 10:50:30 America/Lima] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 76
+[04-Dec-2024 10:50:34 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[04-Dec-2024 10:50:34 America/Lima] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php:70) in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\config\Database.php on line 29
+[04-Dec-2024 10:50:34 America/Lima] Error: Call to a member function query() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloTrabajosDesarrollados.php:18
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControlladorTrabajosDesarrollados.php(7): ModeloTrabajosDesarrollados::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(91): ControladorTrabajosDesarrollados::getData()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(29): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[04-Dec-2024 10:50:34 America/Lima] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 99
+[04-Dec-2024 10:50:39 America/Lima] Problema con la conexión: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[04-Dec-2024 10:50:39 America/Lima] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php:70) in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\config\Database.php on line 29
+[04-Dec-2024 10:50:39 America/Lima] Error: Call to a member function query() on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloContactos.php:18
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorContactos.php(7): ModeloContactos::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php(126): ControladorContactos::getData()
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(29): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[04-Dec-2024 10:50:39 America/Lima] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\home.php on line 134
+[04-Dec-2024 17:54:29 America/Lima] PHP Warning:  move_uploaded_file(C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers/../assets/uploads/foto_6750dda55dbd42.63395299.jpg): Failed to open stream: No such file or directory in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php on line 41
+[04-Dec-2024 17:54:29 America/Lima] PHP Warning:  move_uploaded_file(): Unable to move &quot;C:\Users\DARLIN\AppData\Local\Temp\phpC3BE.tmp&quot; to &quot;C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers/../assets/uploads/foto_6750dda55dbd42.63395299.jpg&quot; in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php on line 41
+[04-Dec-2024 17:54:29 America/Lima] PHP Warning:  move_uploaded_file(C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers/../assets/uploads/cv_6750dda5604b50.30818591.pdf): Failed to open stream: No such file or directory in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php on line 61
+[04-Dec-2024 17:54:29 America/Lima] PHP Warning:  move_uploaded_file(): Unable to move &quot;C:\Users\DARLIN\AppData\Local\Temp\phpC3BF.tmp&quot; to &quot;C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers/../assets/uploads/cv_6750dda5604b50.30818591.pdf&quot; in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php on line 61
+[05-Dec-2024 11:27:56 America/Lima] PHP Warning:  Undefined variable $cvDestino in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php on line 99
+[05-Dec-2024 11:30:31 America/Lima] PHP Warning:  Undefined variable $fotoDestino in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php on line 99

@@ -17,15 +17,26 @@
         include_once __DIR__ . "/../templates/header.php";
     ?>
     <main>
-        <?php
-            include_once __DIR__ . "/../templates/banner.php";
-        ?>
+        <div class="bg-minimal">
+            <section class="l-container">
+                <div class="flex flex-column flex-row-l items-center justify-between gap-4">
+                    <div class="flex flex-column items-center">
+                        <h2 class="dark-color"><?php echo $portafolio["nombre_completo"]?></h2>
+                        <div class="flex gap-4">
+                            <a class="btn btn-white" href="#trabajos-realizados">Ver trabajos</a>
+                            <a class="btn btn-dark" href="#contacto">Contactar</a>
+                        </div>
+                    </div>
+                    <img class="b-radius-4" src=<?php echo $portafolio["url_foto"]?> alt="<?php echo "Foto de " . $portafolio["nombre_completo"]?>"  title="<?php echo "Foto de " . $portafolio["nombre_completo"]?>" width="700px">
+                </div>
+            </section>
+        </div>
         <div class="bg-light">
             <section class="l-container" id="sobre-mi">
                 <div class="py-6">
                     <h2 class="dark-color">Sobre mí</h2>
                     <p class="text-color mb-4"><?php echo $portafolio["descripcion"]?></p>
-                    <a class="btn btn-dark" href=<?php echo $portafolio["url_cv"]?> download>Descargar CV</a>
+                    <a class="btn btn-dark" href="<?php echo $portafolio["url_cv"]?>" download>Descargar CV</a>
                 </div>
             </section>
         </div>

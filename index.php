@@ -1,9 +1,10 @@
 <?php
     require_once __DIR__ . "/core/config/Config.php";
+    require_once __DIR__ . "/core/auth/Sesion.php";
     require_once __DIR__ . "/core/routes/RouterUsuarios.php";
+    require_once __DIR__ . "/core/routes/RouterPortafolios.php";
 
     $ruta = $_SERVER["REQUEST_URI"];
-    $metodo = $_SERVER["REQUEST_METHOD"];
 
     $ruta = parse_url($ruta, PHP_URL_PATH);
     $partesRuta = explode('/', $ruta);
@@ -14,8 +15,8 @@
                 RouterUsuarios::redireccionar($partesRuta[2]);
                 break;
             
-            case "usuarios":
-                RouterUsuarios::redireccionar($partesRuta[2]);
+            case "portafolio":
+                RouterPortafolios::redireccionar($partesRuta[2]);
                 break;
             
             default:
@@ -26,15 +27,31 @@
     } else if (count($partesRuta) == 2) {
         switch ($partesRuta[1]) {
             case "":
-                include_once __DIR__ . "/pages/home.php";
+                if (!Sesion::isAuthenticated()) {
+                    header("location: /login");
+                }
+
+                include_once __DIR__ . "/pages/view.php";
                 break;
 
             case "login":
+                if (Sesion::isAuthenticated()) {
+                    header("location: /dashboard");
+                }
+
                 include_once __DIR__ . "/pages/login.php";
                 break;
             
             case "dashboard":
+                if (!Sesion::isAuthenticated()) {
+                    header("location: /login");
+                }
+                
                 include_once __DIR__ . "/pages/dashboard.php";
+                break;
+
+            default:
+                include_once __DIR__ . "/pages/error.php";
                 break;
         }
         //echo password_hash("12345678", PASSWORD_BCRYPT);

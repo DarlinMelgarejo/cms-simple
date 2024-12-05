@@ -26,7 +26,7 @@ class ConexionBD {
         } catch (PDOException $e) {
             error_log("Problema con la conexión: " . $e->getMessage());
             //echo "Problema con la conexión: " . $e->getMessage();
-            header("location: ../error_500.html");
+            header("location: /error");
         }
     }
 
