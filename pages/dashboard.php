@@ -64,7 +64,7 @@
             <?php
                 include_once __DIR__ . "/../core/controllers/ControladorPortafolios.php";
 
-                $portafolio = ControladorPortafolios::getData();
+                $portafolio = ControladorPortafolios::getData(Sesion::get("id"));
             ?>
             <section class="card show" id="seccion-portafolio">
                 <h2>Editar Información del Portafolio</h2>

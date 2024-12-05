@@ -6,15 +6,17 @@ class ModeloPortafolios {
     /**
      * Busca la información del portafolio.
      * 
-     * @return array|null Retorna los datos del portafolio si existe, o null si no.
+     * @return array Retorna los datos del portafolio.
      */
-    public static function getData() {
+    public static function getData($id) {
         $conexion = new ConexionBD();
         $conexion->conectar();
         $bd = $conexion->getConexion();
 
-        $consulta = $bd->query("SELECT * FROM portafolios WHERE usuario_id = 1");
-        $resultados = $consulta->fetch(PDO::FETCH_ASSOC) ?: null;
+        $consulta = $bd->prepare("SELECT * FROM portafolios WHERE usuario_id = :usuario_id");
+        $consulta->bindParam(":usuario_id", $id, PDO::PARAM_INT);
+        $consulta->execute();
+        $resultados = $consulta->fetch(PDO::FETCH_ASSOC);
 
         return $resultados;
     }

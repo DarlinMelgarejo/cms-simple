@@ -2,9 +2,9 @@
     require_once __DIR__ . "/../models/ModeloPortafolios.php"; // Modelo para interactuar con la tabla "portafolios"
 
     class ControladorPortafolios {
-        public static function getData() {
+        public static function getData($id) {
             try {
-                $usuario = ModeloPortafolios::getData();
+                $usuario = ModeloPortafolios::getData($id);
                 return $usuario;
             } catch (\Error $error) {
                 error_log($error);

@@ -302,3 +302,65 @@ Stack trace:
 [04-Dec-2024 17:54:29 America/Lima] PHP Warning:  move_uploaded_file(): Unable to move &quot;C:\Users\DARLIN\AppData\Local\Temp\phpC3BF.tmp&quot; to &quot;C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers/../assets/uploads/cv_6750dda5604b50.30818591.pdf&quot; in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php on line 61
 [05-Dec-2024 11:27:56 America/Lima] PHP Warning:  Undefined variable $cvDestino in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php on line 99
 [05-Dec-2024 11:30:31 America/Lima] PHP Warning:  Undefined variable $fotoDestino in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php on line 99
+[05-Dec-2024 12:03:52 America/Lima] Error: Call to undefined method PDO::bindParam() in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolios.php:17
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php(7): ModeloPortafolios::getData(1)
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php(67): ControladorPortafolios::getData(1)
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(50): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[05-Dec-2024 12:03:52 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 79
+[05-Dec-2024 12:03:52 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 83
+[05-Dec-2024 12:03:52 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 87
+[05-Dec-2024 12:03:52 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 103
+[05-Dec-2024 12:03:52 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 106
+[05-Dec-2024 12:04:00 America/Lima] Error: Call to undefined method PDO::bindParam() in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolios.php:17
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php(7): ModeloPortafolios::getData(1)
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php(67): ControladorPortafolios::getData(1)
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(50): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[05-Dec-2024 12:04:00 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 79
+[05-Dec-2024 12:04:00 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 83
+[05-Dec-2024 12:04:00 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 87
+[05-Dec-2024 12:04:00 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 103
+[05-Dec-2024 12:04:00 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 106
+[05-Dec-2024 12:05:20 America/Lima] Error: Call to undefined method PDO::bindParam() in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolios.php:17
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php(7): ModeloPortafolios::getData(1)
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php(67): ControladorPortafolios::getData(1)
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(50): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[05-Dec-2024 12:05:20 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 79
+[05-Dec-2024 12:05:20 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 83
+[05-Dec-2024 12:05:20 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 87
+[05-Dec-2024 12:05:20 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 103
+[05-Dec-2024 12:05:20 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 106
+[05-Dec-2024 12:05:20 America/Lima] Error: Call to undefined method PDO::bindParam() in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolios.php:17
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php(7): ModeloPortafolios::getData(1)
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php(67): ControladorPortafolios::getData(1)
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(50): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[05-Dec-2024 12:05:20 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 79
+[05-Dec-2024 12:05:20 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 83
+[05-Dec-2024 12:05:20 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 87
+[05-Dec-2024 12:05:20 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 103
+[05-Dec-2024 12:05:20 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 106
+[05-Dec-2024 12:05:33 America/Lima] Error: Call to undefined method PDO::bindParam() in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\models\ModeloPortafolios.php:17
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorPortafolios.php(7): ModeloPortafolios::getData(1)
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php(67): ControladorPortafolios::getData(1)
+#2 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(50): include_once('C:\\Users\\DARLIN...')
+#3 {main}
+[05-Dec-2024 12:05:33 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 79
+[05-Dec-2024 12:05:33 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 83
+[05-Dec-2024 12:05:33 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 87
+[05-Dec-2024 12:05:33 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 103
+[05-Dec-2024 12:05:33 America/Lima] PHP Warning:  Trying to access array offset on null in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\dashboard.php on line 106
+[05-Dec-2024 12:09:54 America/Lima] PHP Warning:  Trying to access array offset on false in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\view.php on line 13
+[05-Dec-2024 12:09:54 America/Lima] PHP Warning:  Trying to access array offset on false in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\view.php on line 24
+[05-Dec-2024 12:09:54 America/Lima] PHP Warning:  Trying to access array offset on false in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\view.php on line 30
+[05-Dec-2024 12:09:54 America/Lima] PHP Warning:  Trying to access array offset on false in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\view.php on line 30
+[05-Dec-2024 12:09:54 America/Lima] PHP Warning:  Trying to access array offset on false in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\view.php on line 30
+[05-Dec-2024 12:09:54 America/Lima] PHP Warning:  Trying to access array offset on false in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\view.php on line 38
+[05-Dec-2024 12:09:54 America/Lima] PHP Warning:  Trying to access array offset on false in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\view.php on line 39

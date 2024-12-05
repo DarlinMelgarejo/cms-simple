@@ -1,7 +1,7 @@
 <?php
     include_once __DIR__ . "/../core/controllers/ControladorPortafolios.php";
 
-    $portafolio = ControladorPortafolios::getData();
+    $portafolio = ControladorPortafolios::getData(Sesion::get("id"));
 ?>
 <!DOCTYPE html>
 <html lang="es">
