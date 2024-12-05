@@ -47,9 +47,9 @@
                     </a>
                 </li>
                 <li class="main-nav__item">
-                    <a class="main-nav__link" onclick="mostrarSeccion('seccion-trabajos-realizados')">
+                    <a class="main-nav__link" onclick="mostrarSeccion('seccion-trabajos-desarrollados')">
                         <img class="icon" src="assets/images/svg/component.svg" alt="Icono de componente">
-                        <span>Trabajos Realizados</span>
+                        <span>Trabajos Desarrollados</span>
                     </a>
                 </li>
                 <li class="main-nav__item">
@@ -72,9 +72,9 @@
                     <div class="flex flex-column gap-4 mb-4">
                         <label class="form-label" for="foto">Foto</label>
                         <div class="flex flex-row items-center gap-4">
-                            <button type="button" class="btn btn-white" onclick="seleccionarFoto()"><img class="icon__border" src="../assets/images/svg/upload_file.svg" alt="Icono de foto"></button>
+                            <button type="button" class="btn btn-white" onclick="seleccionarFoto('foto')"><img class="icon__border" src="../assets/images/svg/upload_file.svg" alt="Icono de foto"></button>
                             <input type="file" name="foto" id="foto"  accept=".png, .jpg, .jpeg">
-                            <button type="button" class="btn btn-white" onclick="seleccionarFoto()">Subir foto</button>
+                            <button type="button" class="btn btn-white" onclick="seleccionarFoto('foto')">Subir foto</button>
                         </div>
                         <input class="form-control" type="text" name="url_foto" id="url_foto" value="<?php echo $portafolio["url_foto"]?>">
                     </div>
@@ -86,14 +86,6 @@
                         <label class="form-label" for="titulo">Descripción</label>
                         <textarea class="form-control" name="descripcion" id="descripcion" placeholder="Ingrese la descripción que saldrá en el portafolio" rows="5"><?php echo $portafolio["descripcion"]?></textarea>
                     </div>
-                    <!-- <div class="flex items-center gap-2 mb-4">
-                        <input class="switch" type="checkbox" name="mostrar-descripcion" id="switch" onchange="mostrarDescripcion()">
-                        <label class="form-label m-0" for="mostrar-descripcion">Mostrar descripción</label>
-                    </div>
-                    <div class="flex flex-column mb-4 hidden">
-                        <label class="form-label" for="titulo">Descripción</label>
-                        <textarea class="form-control" name="descripcion" id="descripcion" placeholder="Ingrese la descripción del header" rows="3"></textarea>
-                    </div> -->
                     <div class="flex flex-column gap-4 mb-4">
                         <label class="form-label" for="cv">CV</label>
                         <div class="flex flex-row items-center gap-4">
@@ -196,8 +188,64 @@
                     </tbody>
                 </table>
             </section>
-            <section class="card" id="seccion-trabajos-realizados">
-                <h2>Editar Contenido Principal</h2>
+            <section class="card" id="seccion-trabajos-desarrollados">
+                <h2>Agregar o Eliminar Trabajos Desarrollados</h2>
+                <form class="mb-4" action="/trabajos-desarrollados/agregar" method="POST" enctype="multipart/form-data">
+                    <div class="flex flex-column mb-4">
+                        <label class="form-label" for="titulo">Nombre</label>
+                        <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre del trabajo que desarrolló" required>
+                    </div>
+                    <div class="flex flex-column mb-4">
+                        <label class="form-label" for="titulo">Descripción</label>
+                        <textarea class="form-control" name="descripcion" id="descripcion" placeholder="Ingrese la descripción del trabajo" rows="3" required></textarea>
+                    </div>
+                    <div class="flex flex-column gap-2 mb-4">
+                        <label class="form-label" for="foto_trabajo">Foto Trabajo</label>
+                        <div class="flex flex-row items-center gap-4">
+                            <button type="button" class="btn btn-white" onclick="seleccionarFoto('foto_trabajo')"><img class="icon__border" src="../assets/images/svg/upload_file.svg" alt="Icono de foto"></button>
+                            <input type="file" name="foto_trabajo" id="foto_trabajo"  accept=".png, .jpg, .jpeg" required>
+                            <button type="button" class="btn btn-white" onclick="seleccionarFoto('foto_trabajo')">Subir foto</button>
+                        </div>
+                    </div>
+                    <div class="flex flex-column mb-4">
+                        <label class="form-label" for="titulo">URL Trabajo Github</label>
+                        <input class="form-control" type="url" name="url_trabajo_github" id="url_trabajo_github" placeholder="Ingrese la URL del repositorio en Github" required>
+                    </div>
+                    <div class="flex flex-column mb-4">
+                        <label class="form-label" for="titulo">URL Trabajo Desplegado</label>
+                        <input class="form-control" type="url" name="url_trabajo_desplegado" id="url_trabajo_desplegado" placeholder="Ingrese la URL del trabajo desplegado" required>
+                    </div>
+                    <div class="flex justify-start">
+                        <input type="hidden" name="portafolio_id" value=<?php echo $portafolio["id"]?>>
+                        <button class="btn" type="submit">Agregar</button>
+                    </div>
+                </form>
+                <?php
+                    include_once __DIR__ . "/../core/controllers/ControladorTrabajosDesarrollados.php";
+                    $trabajos_desarrollados = ControladorTrabajosDesarrollados::getData($portafolio["id"]);
+                ?>
+                <table>
+                    <thead>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Opciones</th>
+                    </thead>
+                    <tbody>
+                    <?php
+                        foreach($trabajos_desarrollados as $trabajo_desarrollado){
+                    ?>
+                        <tr>
+                            <td><?php echo $trabajo_desarrollado["id"]?></td>
+                            <td><?php echo $trabajo_desarrollado["nombre"]?></td>
+                            <td><?php echo $trabajo_desarrollado["descripcion"]?></td>
+                            <td><a class="btn" href="/trabajos-desarrollados/eliminar/?id=<?php echo urlencode($trabajo_desarrollado['id'])?>">Eliminar</a></td>
+                        </tr>
+                    <?php
+                        }
+                    ?>
+                    </tbody>
+                </table>
             </section>
             <section class="card" id="seccion-contactos">
                 <h2>Editar Pie de Página</h2>
@@ -205,16 +253,14 @@
         </main>
     </div>
     <script>
-        const inputFoto = document.getElementById("foto")
-        const seleccionarFoto = () => {
-            inputFoto.click()
+        const seleccionarFoto = (id) => {
+            document.getElementById(id).click()
         }
         
         const inputCV = document.getElementById("cv")
         const seleccionarCV = () => {
             inputCV.click()
         }
-
 
         const mostrarSeccion = (seccion) => {
             const seccionAnterior = document.querySelector(".show")
@@ -223,17 +269,6 @@
             const seccionActual = document.getElementById(seccion)
             seccionActual.classList.add("show")
         }
-
-        const input_switch = document.getElementById("switch")
-
-        // const descripcion = document.querySelector(".hidden")
-        // const mostrarDescripcion = () => {
-        //     if (input_switch.checked) {
-        //         descripcion.classList.remove("hidden")
-        //     } else {
-        //         descripcion.classList.add("hidden")
-        //     }
-        // }
     </script>
 </body>
 </html>

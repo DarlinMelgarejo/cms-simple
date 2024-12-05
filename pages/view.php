@@ -23,7 +23,7 @@
                     <div class="flex flex-column items-center">
                         <h2 class="dark-color"><?php echo $portafolio["nombre_completo"]?></h2>
                         <div class="flex gap-4">
-                            <a class="btn btn-white" href="#trabajos-realizados">Ver trabajos</a>
+                            <a class="btn btn-white" href="#trabajos-desarrollados">Ver trabajos</a>
                             <a class="btn btn-dark" href="#contacto">Contactar</a>
                         </div>
                     </div>
@@ -87,13 +87,13 @@
             </section>
         </div>
         <?php
-            include_once __DIR__ . "/../core/controllers/ControlladorTrabajosDesarrollados.php";
-            $trabajos_desarrollados = ControladorTrabajosDesarrollados::getData();
+            include_once __DIR__ . "/../core/controllers/ControladorTrabajosDesarrollados.php";
+            $trabajos_desarrollados = ControladorTrabajosDesarrollados::getData($portafolio["id"]);
         ?>
         <div class="bg-minimal">
-            <section class="l-container" id="trabajos-realizados">
+            <section class="l-container" id="trabajos-desarrollados">
                 <div class="py-6">
-                    <h2 class="dark-color">Trabajos realizados</h2>
+                    <h2 class="dark-color">Trabajos Desarrollados</h2>
                     <div class="grid grid-cols-1 grid-cols-s-2 grid-cols-m-3 gap-4 m-auto">
                         <?php
                             foreach ($trabajos_desarrollados as $trabajo_desarrollado) {
