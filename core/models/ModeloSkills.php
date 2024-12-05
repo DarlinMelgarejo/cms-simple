@@ -6,25 +6,72 @@ class ModeloSkills {
     /**
      * Busca la información de las skills.
      * 
-     * @return array|null Retorna los datos de las skills si existen, o null si no.
+     * @return array Retorna los datos de las skills.
      */
-    public static function getData() {
+    public static function getData($id) {
         // Crear la conexión
         $conexion = new ConexionBD();
         $conexion->conectar();
         $bd = $conexion->getConexion();
 
-        // Consulta para obtener todas las skills con portafolio_id = 1
-        $consulta = $bd->query("SELECT * FROM skills WHERE portafolio_id = 1");
-
-        // Ejecutar la consulta
+        $consulta = $bd->prepare("SELECT * FROM skills WHERE portafolio_id = :portafolio_id");
+        $consulta->bindParam(":portafolio_id", $id, PDO::PARAM_INT);
         $consulta->execute();
 
-        // Retornar todos los registros (fetchAll devuelve un array con todos los resultados)
         $resultados = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
-        // Si hay resultados, los devuelve; si no, devuelve null
-        return $resultados ?: null;
+        return $resultados;
+    }
+
+    /**
+     * Actualiza los datos esenciales del protafolio
+     */
+    public static function setData($portafolio_id, $nombre, $descripcion) {
+        $conexion = new ConexionBD();
+        $conexion->conectar();
+        $bd = $conexion->getConexion();
+
+        $consulta = $bd->prepare("INSERT INTO skills (portafolio_id, nombre, descripcion) VALUES (:portafolio_id, :nombre, :descripcion)");
+
+        $consulta->bindParam(":portafolio_id", $portafolio_id, PDO::PARAM_INT);
+        $consulta->bindParam(":nombre", $nombre, PDO::PARAM_STR);
+        $consulta->bindParam(":descripcion", $descripcion, PDO::PARAM_STR);
+
+        $resultado = $consulta->execute();
+        $consulta->closeCursor();
+
+        if ($resultado) {
+            header("location: /dashboard");
+            exit();
+        } else {
+            header("location: /dashboard");
+            exit();
+        }
+    }
+
+    /**
+     * Elimina el registro con el id que se le pasa
+     */
+
+    public static function delete($id) {
+        $conexion = new ConexionBD();
+        $conexion->conectar();
+        $bd = $conexion->getConexion();
+
+        $consulta = $bd->prepare("DELETE FROM skills WHERE id = :id");
+
+        $consulta->bindParam(":id", $id, PDO::PARAM_INT);
+
+        $resultado = $consulta->execute();
+        $consulta->closeCursor();
+
+        if ($resultado) {
+            header("location: /dashboard");
+            exit();
+        } else {
+            header("location: /dashboard");
+            exit();
+        }
     }
 }
 

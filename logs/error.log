@@ -364,3 +364,15 @@ Stack trace:
 [05-Dec-2024 12:09:54 America/Lima] PHP Warning:  Trying to access array offset on false in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\view.php on line 30
 [05-Dec-2024 12:09:54 America/Lima] PHP Warning:  Trying to access array offset on false in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\view.php on line 38
 [05-Dec-2024 12:09:54 America/Lima] PHP Warning:  Trying to access array offset on false in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\view.php on line 39
+[05-Dec-2024 13:00:22 America/Lima] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ControladorSkills::getData(), 0 passed in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\view.php on line 45 and exactly 1 expected in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorSkills.php:5
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\view.php(45): ControladorSkills::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(39): include_once('C:\\Users\\DARLIN...')
+#2 {main}
+  thrown in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorSkills.php on line 5
+[05-Dec-2024 13:00:40 America/Lima] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ControladorSkills::getData(), 0 passed in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\view.php on line 45 and exactly 1 expected in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorSkills.php:5
+Stack trace:
+#0 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\pages\view.php(45): ControladorSkills::getData()
+#1 C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\index.php(39): include_once('C:\\Users\\DARLIN...')
+#2 {main}
+  thrown in C:\Users\DARLIN\Escritorio\proyecto-cms-portafolio\core\controllers\ControladorSkills.php on line 5

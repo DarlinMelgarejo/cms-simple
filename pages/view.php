@@ -42,7 +42,7 @@
         </div>
         <?php
             include_once __DIR__ . "/../core/controllers/ControladorSkills.php";
-            $skills = ControladorSkills::getData();
+            $skills = ControladorSkills::getData($portafolio["id"]);
         ?>
         <div class="bg-minimal">
             <section class="l-container" id="skills">

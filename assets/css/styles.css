@@ -655,6 +655,32 @@ input[type=file]::-webkit-file-upload-button {
   display: none;
 }
 
+.container-table {
+  width: 100%;
+  overflow-x: auto;
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: wrap;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+td {
+  border-bottom: 2px solid #000000;
+}
+
+thead {
+  background: #0D0D0D;
+  color: #FFFFFF;
+}
+
 .main-footer {
   background-color: #3339A6;
   padding: 1.25em;

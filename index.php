@@ -3,13 +3,14 @@
     require_once __DIR__ . "/core/auth/Sesion.php";
     require_once __DIR__ . "/core/routes/RouterUsuarios.php";
     require_once __DIR__ . "/core/routes/RouterPortafolios.php";
+    require_once __DIR__ . "/core/routes/RouterSkills.php";
 
     $ruta = $_SERVER["REQUEST_URI"];
 
     $ruta = parse_url($ruta, PHP_URL_PATH);
     $partesRuta = explode('/', $ruta);
 
-    if (count($partesRuta) == 3) {
+    if (count($partesRuta) >= 3) {
         switch ($partesRuta[1]) {
             case "usuarios":
                 RouterUsuarios::redireccionar($partesRuta[2]);
@@ -17,6 +18,10 @@
             
             case "portafolio":
                 RouterPortafolios::redireccionar($partesRuta[2]);
+                break;
+            
+            case "skills":
+                RouterSkills::redireccionar($partesRuta[2]);
                 break;
             
             default:

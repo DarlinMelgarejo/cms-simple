@@ -1,0 +1,23 @@
+.container-table {
+    width: 100%;
+    overflow-x: auto;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: wrap;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+td {
+    border-bottom: 2px solid $text-color;
+}
+thead {
+    background: $black-color;
+    color: $white-color;
+}

@@ -111,7 +111,47 @@
                 </form>
             </section>
             <section class="card" id="seccion-skills">
-                <h2>Editar Barra de Navegación</h2>
+                <h2>Agregar o Eliminar Skills</h2>
+                <form class="mb-4" action="/skills/agregar" method="POST">
+                    <div class="flex flex-column mb-4">
+                        <label class="form-label" for="titulo">Nombre</label>
+                        <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre de la skill" required>
+                    </div>
+                    <div class="flex flex-column mb-4">
+                        <label class="form-label" for="titulo">Descripción</label>
+                        <textarea class="form-control" name="descripcion" id="descripcion" placeholder="Ingrese la descripción de la skill" rows="3" required></textarea>
+                    </div>
+                    <div class="flex justify-start">
+                        <input type="hidden" name="portafolio_id" value=<?php echo $portafolio["id"]?>>
+                        <button class="btn" type="submit">Agregar</button>
+                    </div>
+                </form>
+                <?php
+                    include_once __DIR__ . "/../core/controllers/ControladorSkills.php";
+                    $skills = ControladorSkills::getData($portafolio["id"]);
+                ?>
+                <table>
+                    <thead>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Opciones</th>
+                    </thead>
+                    <tbody>
+                    <?php
+                        foreach($skills as $skill){
+                    ?>
+                        <tr>
+                            <td><?php echo $skill["id"]?></td>
+                            <td><?php echo $skill["nombre"]?></td>
+                            <td><?php echo $skill["descripcion"]?></td>
+                            <td><a class="btn" href="/skills/eliminar/?id=<?php echo urlencode($skill['id'])?>">Eliminar</a></td>
+                        </tr>
+                    <?php
+                        }
+                    ?>
+                    </tbody>
+                </table>
             </section>
             <section class="card" id="seccion-servicios">
                 <h2>Editar Banner</h2>
@@ -146,14 +186,14 @@
 
         const input_switch = document.getElementById("switch")
 
-        const descripcion = document.querySelector(".hidden")
-        const mostrarDescripcion = () => {
-            if (input_switch.checked) {
-                descripcion.classList.remove("hidden")
-            } else {
-                descripcion.classList.add("hidden")
-            }
-        }
+        // const descripcion = document.querySelector(".hidden")
+        // const mostrarDescripcion = () => {
+        //     if (input_switch.checked) {
+        //         descripcion.classList.remove("hidden")
+        //     } else {
+        //         descripcion.classList.add("hidden")
+        //     }
+        // }
     </script>
 </body>
 </html>
