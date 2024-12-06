@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
 <body>
     <div class="flex flex-column items-center py-4">
         <h1>HA OCURRIDO UN ERROR</h1>
-        <a href="/">Ir a inicio</a>
+        <a href="/dashboard">Regresar a panel de control</a>
     </div>
 </body>
 </html>

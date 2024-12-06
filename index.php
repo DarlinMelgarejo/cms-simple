@@ -6,6 +6,7 @@
     require_once __DIR__ . "/core/routes/RouterSkills.php";
     require_once __DIR__ . "/core/routes/RouterServicios.php";
     require_once __DIR__ . "/core/routes/RouterTrabajosDesarrollados.php";
+    require_once __DIR__ . "/core/routes/RouterContactos.php";
 
     $ruta = $_SERVER["REQUEST_URI"];
 
@@ -33,10 +34,13 @@
             case "trabajos-desarrollados":
                 RouterTrabajosDesarrollados::redireccionar($partesRuta[2]);
                 break;
+
+            case "contactos":
+                RouterContactos::redireccionar($partesRuta[2]);
+                break;
             
             default:
-                echo "ESTA PAGINA NO EXISTE";
-                echo "<br>" . count($partesRuta);
+                include_once __DIR__ . "/pages/error.php";
                 break;
         }
     } else if (count($partesRuta) == 2) {

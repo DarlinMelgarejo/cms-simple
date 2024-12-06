@@ -79,11 +79,11 @@
                         <input class="form-control" type="text" name="url_foto" id="url_foto" value="<?php echo $portafolio["url_foto"]?>">
                     </div>
                     <div class="flex flex-column mb-4">
-                        <label class="form-label" for="titulo">Nombre Completo</label>
+                        <label class="form-label" for="nombre_completo">Nombre Completo</label>
                         <input class="form-control" type="text" name="nombre_completo" id="nombre_completo" placeholder="Ingrese su nombre completo" value="<?php echo $portafolio["nombre_completo"]?>">
                     </div>
                     <div class="flex flex-column mb-4">
-                        <label class="form-label" for="titulo">Descripción</label>
+                        <label class="form-label" for="descripcion">Descripción</label>
                         <textarea class="form-control" name="descripcion" id="descripcion" placeholder="Ingrese la descripción que saldrá en el portafolio" rows="5"><?php echo $portafolio["descripcion"]?></textarea>
                     </div>
                     <div class="flex flex-column gap-4 mb-4">
@@ -106,11 +106,11 @@
                 <h2>Agregar o Eliminar Skills</h2>
                 <form class="mb-4" action="/skills/agregar" method="POST">
                     <div class="flex flex-column mb-4">
-                        <label class="form-label" for="titulo">Nombre</label>
+                        <label class="form-label" for="nombre">Nombre</label>
                         <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre de la skill que maneja" required>
                     </div>
                     <div class="flex flex-column mb-4">
-                        <label class="form-label" for="titulo">Descripción</label>
+                        <label class="form-label" for="descripcion">Descripción</label>
                         <textarea class="form-control" name="descripcion" id="descripcion" placeholder="Ingrese la descripción de la skill" rows="3" required></textarea>
                     </div>
                     <div class="flex justify-start">
@@ -149,11 +149,11 @@
                 <h2>Agregar o Eliminar Servicios</h2>
                 <form class="mb-4" action="/servicios/agregar" method="POST">
                     <div class="flex flex-column mb-4">
-                        <label class="form-label" for="titulo">Nombre</label>
+                        <label class="form-label" for="nombre">Nombre</label>
                         <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre del servicio que brinda" required>
                     </div>
                     <div class="flex flex-column mb-4">
-                        <label class="form-label" for="titulo">Descripción</label>
+                        <label class="form-label" for="descripcion">Descripción</label>
                         <textarea class="form-control" name="descripcion" id="descripcion" placeholder="Ingrese la descripción del servicio" rows="3" required></textarea>
                     </div>
                     <div class="flex justify-start">
@@ -192,11 +192,11 @@
                 <h2>Agregar o Eliminar Trabajos Desarrollados</h2>
                 <form class="mb-4" action="/trabajos-desarrollados/agregar" method="POST" enctype="multipart/form-data">
                     <div class="flex flex-column mb-4">
-                        <label class="form-label" for="titulo">Nombre</label>
+                        <label class="form-label" for="nombre">Nombre</label>
                         <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre del trabajo que desarrolló" required>
                     </div>
                     <div class="flex flex-column mb-4">
-                        <label class="form-label" for="titulo">Descripción</label>
+                        <label class="form-label" for="descripcion">Descripción</label>
                         <textarea class="form-control" name="descripcion" id="descripcion" placeholder="Ingrese la descripción del trabajo" rows="3" required></textarea>
                     </div>
                     <div class="flex flex-column gap-2 mb-4">
@@ -208,11 +208,11 @@
                         </div>
                     </div>
                     <div class="flex flex-column mb-4">
-                        <label class="form-label" for="titulo">URL Trabajo Github</label>
+                        <label class="form-label" for="url_trabajo_github">URL Trabajo Github</label>
                         <input class="form-control" type="url" name="url_trabajo_github" id="url_trabajo_github" placeholder="Ingrese la URL del repositorio en Github" required>
                     </div>
                     <div class="flex flex-column mb-4">
-                        <label class="form-label" for="titulo">URL Trabajo Desplegado</label>
+                        <label class="form-label" for="url_trabajo_desplegado">URL Trabajo Desplegado</label>
                         <input class="form-control" type="url" name="url_trabajo_desplegado" id="url_trabajo_desplegado" placeholder="Ingrese la URL del trabajo desplegado" required>
                     </div>
                     <div class="flex justify-start">
@@ -239,7 +239,7 @@
                             <td><?php echo $trabajo_desarrollado["id"]?></td>
                             <td><?php echo $trabajo_desarrollado["nombre"]?></td>
                             <td><?php echo $trabajo_desarrollado["descripcion"]?></td>
-                            <td><a class="btn" href="/trabajos-desarrollados/eliminar/?id=<?php echo urlencode($trabajo_desarrollado['id'])?>">Eliminar</a></td>
+                            <td><a class="btn" href="/trabajos-desarrollados/eliminar/?id=<?php echo urlencode($trabajo_desarrollado['id'])?>&url_foto_trabajo=<?php echo urldecode($trabajo_desarrollado["url_foto_trabajo"])?>">Eliminar</a></td>
                         </tr>
                     <?php
                         }
@@ -247,8 +247,28 @@
                     </tbody>
                 </table>
             </section>
+            <?php
+                include_once __DIR__ . "/../core/controllers/ControladorContactos.php";
+                $contactos = ControladorContactos::getData($portafolio["id"]);
+            ?>
             <section class="card" id="seccion-contactos">
-                <h2>Editar Pie de Página</h2>
+                <h2>Editar Información de Contacto</h2>
+                <form class="mb-4" action="/contactos/editar" method="POST">
+                    <?php
+                        foreach($contactos as $contacto) {
+                    ?>
+                    <div class="flex flex-column mb-4">
+                        <label class="form-label" for="<?php echo $contacto["tipo_contacto"]?>"><?php echo ucfirst($contacto["tipo_contacto"])?></label>
+                        <input class="form-control" type="<?php echo $contacto["tipo_contacto"] == "email" ? "email" : "url"?>" name="<?php echo $contacto["tipo_contacto"]?>" id="<?php echo $contacto["tipo_contacto"]?>" placeholder="<?php echo "Ingrese su dirección de " . $contacto["tipo_contacto"]?>" value="<?php echo $contacto["enlace_contacto"]?>" required>
+                    </div>
+                    <?php
+                        }
+                    ?>
+                    <div class="flex justify-start">
+                        <input type="hidden" name="portafolio_id" value=<?php echo $portafolio["id"]?>>
+                        <button class="btn" type="submit">Guardar Cambios</button>
+                    </div>
+                </form>
             </section>
         </main>
     </div>

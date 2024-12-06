@@ -6,25 +6,74 @@ class ModeloContactos {
     /**
      * Busca la información de los contactos.
      * 
-     * @return array|null Retorna los datos de los contactos si existen, o null si no.
+     * @return array Retorna los datos de contactos
      */
-    public static function getData() {
+    public static function getData($id) {
         // Crear la conexión
         $conexion = new ConexionBD();
         $conexion->conectar();
         $bd = $conexion->getConexion();
 
-        // Consulta para obtener todos los contactos con portafolio_id = 1
-        $consulta = $bd->query("SELECT * FROM contactos WHERE portafolio_id = 1");
-
-        // Ejecutar la consulta
+        $consulta = $bd->prepare("SELECT * FROM contactos WHERE portafolio_id = :portafolio_id");
+        $consulta->bindParam(":portafolio_id", $id, PDO::PARAM_INT);
         $consulta->execute();
 
-        // Retornar todos los registros (fetchAll devuelve un array con todos los resultados)
         $resultados = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
-        // Si hay resultados, los devuelve; si no, devuelve null
-        return $resultados ?: null;
+        return $resultados;
+    }
+
+    public static function setData($id, $email, $linkedin, $github) {
+        $conexion = new ConexionBD();
+        $conexion->conectar();
+        $bd = $conexion->getConexion();
+
+        $consultaEmail = $bd->prepare(
+            "UPDATE contactos 
+            SET enlace_contacto = :enlace_contacto
+            WHERE portafolio_id = :portafolio_id AND tipo_contacto = 'email'"
+        );
+        $consultaEmail->bindParam(":enlace_contacto", $email, PDO::PARAM_STR);
+        $consultaEmail->bindParam(":portafolio_id", $id, PDO::PARAM_INT);
+        $resultadoEmail = $consultaEmail->execute();
+        $consultaEmail->closeCursor();
+
+        echo $resultadoEmail . "<br>";
+        
+        $consultaLinkedin = $bd->prepare(
+            "UPDATE contactos 
+            SET enlace_contacto = :enlace_contacto
+            WHERE portafolio_id = :portafolio_id AND tipo_contacto = 'linkedin'"
+        );
+        $consultaLinkedin->bindParam(":enlace_contacto", $linkedin, PDO::PARAM_STR);
+        $consultaLinkedin->bindParam(":portafolio_id", $id, PDO::PARAM_INT);
+        $resultadoLinkedin = $consultaLinkedin->execute();
+        $consultaLinkedin->closeCursor();
+
+        echo $resultadoLinkedin . "<br>";
+        
+        $consultaGithub = $bd->prepare(
+            "UPDATE contactos 
+            SET enlace_contacto = :enlace_contacto
+            WHERE portafolio_id = :portafolio_id AND tipo_contacto = 'github'"
+        );
+        $consultaGithub->bindParam(":enlace_contacto", $github, PDO::PARAM_STR);
+        $consultaGithub->bindParam(":portafolio_id", $id, PDO::PARAM_INT);
+        $resultadoGithub = $consultaGithub->execute();
+        $consultaGithub->closeCursor();
+        
+        echo $resultadoGithub . "<br>";
+
+        $resultados = $resultadoEmail && $resultadoLinkedin && $resultadoGithub;
+
+        
+        if ($resultados) {
+            header("location: /dashboard");
+            exit();
+        } else {
+            header("location: /error");
+            exit();
+        }
     }
 }
 

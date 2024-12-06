@@ -123,7 +123,7 @@
         </div>
         <?php
             include_once __DIR__ . "/../core/controllers/ControladorContactos.php";
-            $contactos = ControladorContactos::getData();
+            $contactos = ControladorContactos::getData($portafolio["id"]);
         ?>
         <div class="bg-light">
             <section class="l-container" id="contacto">
@@ -155,7 +155,7 @@
                                         break;
                                 }
                         ?>
-                            <a href=<?php echo $link_contacto ?> target="_blank"><img src=<?php echo $icono_contacto ?> alt=<?php echo "Icono de " . $contacto["tipo_contacto"]?> width="36px" height="36px"></a>
+                            <a href=<?php echo $link_contacto ?> target="_blank" title="<?php echo $contacto["titulo_enlace"]?>"><img src=<?php echo $icono_contacto ?> alt=<?php echo "Icono de " . $contacto["tipo_contacto"]?> width="36px" height="36px"></a>
                         <?php
                             }
                         ?>

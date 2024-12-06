@@ -54,6 +54,14 @@ class ControladorTrabajosDesarrollados {
 
     public static function delete() {
         $skill_id = $_GET["id"];
+        $url_foto_trabajo = $_GET["url_foto_trabajo"];
+
+        if ($url_foto_trabajo && $url_foto_trabajo !== "assets/images/placeholder-image.jpg") {
+            // Eliminar la foto si existe y no es la imagen placeholder
+            if (file_exists($url_foto_trabajo)) {
+                unlink($url_foto_trabajo); // Eliminar el archivo anterior
+            }
+        }
 
         ModeloTrabajosDesarrollados::delete($skill_id);
     }
