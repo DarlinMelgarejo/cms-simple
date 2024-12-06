@@ -27,7 +27,7 @@ Este proyecto fue desarrollado utilizando las siguientes tecnologías y herramie
 Para instalar y configurar **CMS Simple** en tu máquina local, sigue estos pasos:
 
 1. **Clona el repositorio:**
-git clone https://github.com/tu-usuario/cms-simple.git
+git clone https://github.com/DarlinMelgarejo/cms-simple.git
 
 2. **Crea la base de datos en MySQL:**
 - Dentro del proyecto, encontrarás el archivo `script.sql` en la carpeta `/database`. Copia todo el código SQL de este archivo y ejecútalo en tu base de datos MySQL a través de XAMPP para crear las tablas necesarias.
